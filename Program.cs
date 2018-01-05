@@ -12,18 +12,44 @@ namespace PsVDecrypt
 {
     public class Program
     {
-        private static readonly string OutputDir = Path.Combine(Directory.GetCurrentDirectory(), "output");
+        // private static readonly string OutputDir = Path.Combine(Directory.GetCurrentDirectory(), "output");
         private static SQLiteConnection _dbConn;
 
         private static void Main(string[] args)
         {
-            var coursesdir = Path.Combine(
-                Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData),
-                "Pluralsight", "courses");
+            string coursesdir;
+            string OutputDir;
+
+            if (args.Length > 0)
+            {
+                coursesdir = Path.Combine(Path.GetFullPath(args[0]), "Pluralsight", "courses");
+                Console.WriteLine("You've specified the courses dir:\n\t" + coursesdir);
+            }
+            else
+            {
+                coursesdir = Path.Combine(
+                    Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData),
+                    "Pluralsight", "courses");
+            }
+
             if (!Directory.Exists(coursesdir))
             {
                 Console.WriteLine("Pluralsight courses directory not found");
                 Environment.Exit(-1);
+            }
+
+            if (args.Length >= 2 && args[1] != null)
+            {
+                OutputDir = Path.Combine(
+                    Path.GetFullPath(args[1]), "Pluralsight", "converted");
+                Console.WriteLine("You've also specified the output folder:\n\t" + OutputDir);
+
+            }
+            else
+            {
+                OutputDir = Path.Combine(
+                    Directory.GetCurrentDirectory(), "Pluralsight", "converted");
+                Console.WriteLine("You've not specified the output folder. Using the default location:\n\t" + OutputDir);
             }
 
             var dbdir = Path.Combine(
