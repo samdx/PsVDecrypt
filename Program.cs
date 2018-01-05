@@ -65,15 +65,15 @@ namespace PsVDecrypt
             _dbConn = new SQLiteConnection("Data Source=" + dbdir + ";Version=3;");
             _dbConn.Open();
 
-            Console.WriteLine("Courses directory: " + coursesdir);
-            Console.WriteLine("Output Directory: " + OutputDir);
+            Console.WriteLine("Courses directory:\n\t" + coursesdir);
+            Console.WriteLine("Output Directory:\n\t" + OutputDir);
 
             var subdirs = Directory.GetDirectories(coursesdir);
             Console.WriteLine("\nFound " + subdirs.Length + " course(s):");
 
             foreach (var subdir in subdirs)
             {
-                Console.WriteLine(" > " + Path.GetFileName(subdir));
+                Console.WriteLine(" > " + (Array.IndexOf(subdirs, subdir) + 1) + ": " + Path.GetFileName(subdir));
             }
 
             if (!Directory.Exists(OutputDir))
