@@ -81,16 +81,74 @@ namespace PsVDecrypt
                 Util.CreateDirectory(OutputDir);
             }
 
-            System.Threading.Thread.Sleep(500);
-            Console.WriteLine("\nPress any key to start decrypting all courses..\n");
-            Console.ReadKey();
+            Console.WriteLine("\nPlease specify the course you want to convert. Line by line.");
+            Console.WriteLine("Valid values are from 1 to {0}:", subdirs.Length);
 
-            foreach (var subdir in subdirs)
+            List<int> coursesToBeConverted = new List<int>();
+
+            try
             {
-                DecryptCourse(subdir);
+                int index = 0;
+                do
+                {
+                    coursesToBeConverted.Add(Convert.ToInt32(Console.ReadLine()));
+                    index++;
+                } while (index < subdirs.Length);
+                Console.WriteLine("\n");
+            }
+            catch (System.FormatException)
+            {
+                // Console.WriteLine("Please enter a valid int value. One per line.");
+                // Console.WriteLine("\n");
             }
 
-            Console.WriteLine(" > All done.\n");
+            if (coursesToBeConverted.Count == 0)
+            {
+                Console.WriteLine("You've not specified any course. Do you want to convert all the course? y/N");
+                if (Console.ReadKey().Key == ConsoleKey.Y)
+                {
+                    Console.WriteLine("OK. I'm going to convert all the courses. One by one.\n");
+
+                    foreach (var course in subdirs)
+                    {
+                        Console.WriteLine(" > " + (Array.IndexOf(subdirs, course) + 1)
+                        + ": " + Path.GetFileName(course));
+                        Console.WriteLine("\nPress any key to start decrypting courses..\n");
+                        Console.ReadKey();
+                        DecryptCourse(course, OutputDir);
+                    }
+                    Console.WriteLine("==> All done. <==\n");
+                    Environment.Exit(0);
+
+                }
+                else
+                {
+                    Console.WriteLine("\nOK. Terminating...");
+                    Environment.Exit(-2);
+                }
+            }
+
+            Console.WriteLine("You've specified {0} course(s):\n", coursesToBeConverted.Count);
+
+            foreach (var item in coursesToBeConverted)
+            {
+                Console.WriteLine("-> " + item + ": " + Path.GetFileName(subdirs[item - 1]));
+
+            }
+
+            System.Threading.Thread.Sleep(500);
+            Console.WriteLine("\nPress any key to start decrypting courses..\n");
+            Console.ReadKey();
+
+            foreach (var item in coursesToBeConverted)
+            {
+                var course = subdirs[item - 1];
+                var courseName = Path.GetFileName(course);
+                Console.WriteLine("Decrypting...\n\t" + item + ": " + courseName);
+                DecryptCourse(course, OutputDir);
+            }
+
+            Console.WriteLine("==> All done. <==\n");
         }
 
         private static void DecryptCourse(string courseSrcDir, string OutputDir)
