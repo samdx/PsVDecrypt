@@ -24,8 +24,9 @@ namespace PsVDecrypt
             Application.Run(new MainGui());
         }
 
-        private static void DecryptCourse(string courseSrcDir)
+        public static void DecryptCourse(string courseSrcDir, string OutputDir, SQLiteConnection dbConn)
         {
+            var _dbConn = dbConn;
             var courseName = Path.GetFileName(courseSrcDir);
             var courseDstDir = Path.Combine(OutputDir, courseName);
             var hasTranscript = false;
