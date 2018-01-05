@@ -93,7 +93,7 @@ namespace PsVDecrypt
             Console.WriteLine(" > All done.\n");
         }
 
-        private static void DecryptCourse(string courseSrcDir)
+        private static void DecryptCourse(string courseSrcDir, string OutputDir)
         {
             var courseName = Path.GetFileName(courseSrcDir);
             var courseDstDir = Path.Combine(OutputDir, courseName);
