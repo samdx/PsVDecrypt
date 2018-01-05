@@ -201,8 +201,8 @@ namespace PsVDecrypt
                         sb.Append("\n");
 
                         sb.Append(string.Join("\n",
-                            ((string) transcriptItem["Text"]).Replace("\r", "").Split('\n')
-                            .Select(text => "- " + text)));
+                            ((string)transcriptItem["Text"]).Replace("\r", "").Split('\n')
+                            .Select(text => "" + text)));
                         sb.Append("\n\n");
                     }
 
