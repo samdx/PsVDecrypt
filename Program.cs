@@ -1,70 +1,27 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.IO;
 using System.Data.SQLite;
 using System.Diagnostics;
+using System.Windows.Forms;
 using System.Linq;
 using System.Text;
 using Newtonsoft.Json;
 
 namespace PsVDecrypt
 {
-    public class Program
+    static class Program
     {
-        private static readonly string OutputDir = Path.Combine(Directory.GetCurrentDirectory(), "output");
-        private static SQLiteConnection _dbConn;
-
-        private static void Main(string[] args)
+        /// <summary>
+        /// The main entry point for the application.
+        /// </summary>
+        [STAThread]
+        static void Main()
         {
-            var coursesdir = Path.Combine(
-                Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData),
-                "Pluralsight", "courses");
-            if (!Directory.Exists(coursesdir))
-            {
-                Console.WriteLine("Pluralsight courses directory not found");
-                Environment.Exit(-1);
-            }
-
-            var dbdir = Path.Combine(
-                Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData),
-                "Pluralsight", "pluralsight.db");
-
-            if (!File.Exists(dbdir))
-            {
-                Console.WriteLine("Pluralsight database not found");
-                Environment.Exit(-1);
-            }
-
-            _dbConn = new SQLiteConnection("Data Source=" + dbdir + ";Version=3;");
-            _dbConn.Open();
-
-            Console.WriteLine("Courses directory: " + coursesdir);
-            Console.WriteLine("Output Directory: " + OutputDir);
-
-            var subdirs = Directory.GetDirectories(coursesdir);
-            Console.WriteLine("\nFound " + subdirs.Length + " course(s):");
-
-            foreach (var subdir in subdirs)
-            {
-                Console.WriteLine(" > " + Path.GetFileName(subdir));
-            }
-
-            if (!Directory.Exists(OutputDir))
-            {
-                Util.CreateDirectory(OutputDir);
-            }
-
-            System.Threading.Thread.Sleep(500);
-            Console.WriteLine("\nPress any key to start decrypting all courses..\n");
-            Console.ReadKey();
-
-            foreach (var subdir in subdirs)
-            {
-                DecryptCourse(subdir);
-            }
-
-            Console.WriteLine(" > All done.\n");
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+            Application.Run(new MainGui());
         }
 
         private static void DecryptCourse(string courseSrcDir)
