@@ -110,7 +110,7 @@
             this.nameLabel.Name = "nameLabel";
             this.nameLabel.Size = new System.Drawing.Size(877, 16);
             this.nameLabel.TabIndex = 0;
-            this.nameLabel.Text = "PsvDecrypter GUI";
+            this.nameLabel.Text = "PsvDecryptor GUI";
             this.nameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // InputPathButton
@@ -451,7 +451,7 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainGui";
-            this.Text = "PsvDecrypter GUI";
+            this.Text = "PsvDecryptor GUI";
             this.Shown += new System.EventHandler(this.MainForm_Shown);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
