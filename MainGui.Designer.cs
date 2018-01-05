@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainGui));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.nameLabel = new System.Windows.Forms.Label();
             this.InputPathButton = new System.Windows.Forms.Button();
@@ -443,7 +443,7 @@
             this.LabelBak2.Text = "Welcome to PsVDecrypt!";
             this.LabelBak2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // MainForm
+            // MainGui
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;

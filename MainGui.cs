@@ -1,16 +1,9 @@
 ﻿using System;
 using System.IO;
-using System.Data;
 using System.Diagnostics;
 using System.Data.SQLite;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace PsVDecrypt
@@ -203,6 +196,7 @@ namespace PsVDecrypt
                     {
 
                         Thread convertThread = new Thread(() => Program.DecryptCourse(course.ToString(), OutPutPathFolder, _dbConn));
+
                         try
                         {
                             convertThread.Start();
@@ -216,14 +210,17 @@ namespace PsVDecrypt
                             LabelBak2.Text = course.ToString() + " converted.";
                             LabelBak3.Text = "";
 
-                            _coursesToConverted.Remove(course);
 
                         } catch (Exception anException)
                         {
                             MessageBox.Show(anException.StackTrace);
                         }
+                    
 
                     }
+
+                    _coursesToConverted.Clear();
+
                 } catch (Exception exceptionThis)
                 {
                     MessageBox.Show("Some error occurred:\n " + exceptionThis.StackTrace);
