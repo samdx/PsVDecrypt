@@ -130,7 +130,7 @@ namespace PsVDecrypt
                     moduleItem["AuthorHandle"] as string);
                 var moduleSrcDir = Path.Combine(courseSrcDir, moduleHash);
                 var moduleDstDir = Path.Combine(courseDstDir,
-                    (moduleItem["ModuleIndex"].ToString()).PadLeft(2, '0') + "." +
+                    (moduleItem["ModuleIndex"].ToString()).PadLeft(2, '0') + ". " +
                     Util.TitleToFileName(moduleItem["Title"] as string));
                 if (!Directory.Exists(moduleDstDir))
                     Util.CreateDirectory(moduleDstDir);
@@ -161,10 +161,12 @@ namespace PsVDecrypt
                 {
                     var clipItem = clipsDataTable.Rows[j];
                     Console.WriteLine("     > Processing clip: " + clipItem["Title"]);
-                    var clipSrc = Path.Combine(moduleSrcDir, (string) clipItem["Name"]) + ".psv";
-                    var clipDst = Path.Combine(moduleDstDir,
-                                      (clipItem["ClipIndex"].ToString()).PadLeft(2, '0') + "." +
-                                      Util.TitleToFileName((string) clipItem["Title"])) + ".mp4";
+                    var clipSrc = Path.Combine(moduleSrcDir, (string)clipItem["Name"]) + ".psv";
+                    var DstFile = Path.Combine(moduleDstDir,
+                                      (clipItem["ClipIndex"].ToString()).PadLeft(2, '0') + ". " +
+                                      Util.TitleToFileName((string)clipItem["Title"]));
+
+                    var clipDst = DstFile + ".mp4";
 
                     // Decrypt Clip
                     Util.DecryptFile(clipSrc, clipDst);
@@ -202,12 +204,12 @@ namespace PsVDecrypt
 
                         sb.Append(string.Join("\n",
                             ((string) transcriptItem["Text"]).Replace("\r", "").Split('\n')
-                            .Select(text => "- " + text)));
+                            .Select(text => "" + text)));
                         sb.Append("\n\n");
                     }
 
 
-                    File.WriteAllText(clipDst + ".srt", sb.ToString());
+                    File.WriteAllText(DstFile + ".srt", sb.ToString());
                     Console.WriteLine("       > Done saving subtitles.");
                 }
             }
