@@ -234,7 +234,14 @@ namespace PsVDecrypt
 
             if (coursesListBox.SelectedItems.Count == 1)
             {
-                Process.Start(@coursesListBox.SelectedItem.ToString());
+                try
+                {
+                    Process.Start(@coursesListBox.SelectedItem.ToString());
+                } catch
+                {
+                    MessageBox.Show("Oop. There is something must be wrong! Please check.");
+                }
+                
             } else
             {
                 LabelBak2.Text = "Please one item each time!";
