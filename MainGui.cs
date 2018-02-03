@@ -248,5 +248,25 @@ namespace PsVDecrypt
                 LabelBak3.Text = "ERROR!";
             }
         }
+
+        private void dstOpenButton_Click(object sender, EventArgs e)
+        {
+            if (coursesListBox.SelectedItems.Count == 1)
+            {
+                String selectedCourseName = Path.GetFileNameWithoutExtension(coursesListBox.SelectedItem.ToString());
+                try
+                {
+                    Process.Start(@Path.Combine(OutPutPathFolder, selectedCourseName));
+                } catch
+                {
+                    MessageBox.Show("Please check if the course had been converted or not.");
+                }
+            }
+            else
+            {
+                LabelBak2.Text = "Please one item each time!";
+                LabelBak3.Text = "ERROR!";
+            }
+        }
     }
 }
