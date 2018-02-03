@@ -95,7 +95,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 24F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(883, 620);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(883, 626);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // nameLabel
@@ -121,7 +121,7 @@
             this.InputPathButton.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.InputPathButton.Location = new System.Drawing.Point(773, 19);
             this.InputPathButton.Name = "InputPathButton";
-            this.InputPathButton.Size = new System.Drawing.Size(107, 23);
+            this.InputPathButton.Size = new System.Drawing.Size(107, 26);
             this.InputPathButton.TabIndex = 1;
             this.InputPathButton.Text = "Browse...";
             this.InputPathButton.UseVisualStyleBackColor = true;
@@ -136,7 +136,7 @@
             this.inputPathLabel.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.inputPathLabel.Location = new System.Drawing.Point(3, 16);
             this.inputPathLabel.Name = "inputPathLabel";
-            this.inputPathLabel.Size = new System.Drawing.Size(106, 29);
+            this.inputPathLabel.Size = new System.Drawing.Size(106, 32);
             this.inputPathLabel.TabIndex = 2;
             this.inputPathLabel.Text = "Input Folder";
             this.inputPathLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -148,9 +148,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.outputPathLabel.AutoSize = true;
             this.outputPathLabel.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.outputPathLabel.Location = new System.Drawing.Point(3, 71);
+            this.outputPathLabel.Location = new System.Drawing.Point(3, 74);
             this.outputPathLabel.Name = "outputPathLabel";
-            this.outputPathLabel.Size = new System.Drawing.Size(106, 29);
+            this.outputPathLabel.Size = new System.Drawing.Size(106, 32);
             this.outputPathLabel.TabIndex = 3;
             this.outputPathLabel.Text = "Output Folder";
             this.outputPathLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -163,7 +163,7 @@
             this.sameLocationAskingLabal.AutoSize = true;
             this.tableLayoutPanel1.SetColumnSpan(this.sameLocationAskingLabal, 2);
             this.sameLocationAskingLabal.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.sameLocationAskingLabal.Location = new System.Drawing.Point(3, 45);
+            this.sameLocationAskingLabal.Location = new System.Drawing.Point(3, 48);
             this.sameLocationAskingLabal.Name = "sameLocationAskingLabal";
             this.sameLocationAskingLabal.Size = new System.Drawing.Size(764, 26);
             this.sameLocationAskingLabal.TabIndex = 4;
@@ -176,9 +176,9 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.OutPutPathButton.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.OutPutPathButton.Location = new System.Drawing.Point(773, 74);
+            this.OutPutPathButton.Location = new System.Drawing.Point(773, 77);
             this.OutPutPathButton.Name = "OutPutPathButton";
-            this.OutPutPathButton.Size = new System.Drawing.Size(107, 23);
+            this.OutPutPathButton.Size = new System.Drawing.Size(107, 26);
             this.OutPutPathButton.TabIndex = 6;
             this.OutPutPathButton.Text = "Browse...";
             this.OutPutPathButton.UseVisualStyleBackColor = true;
@@ -186,25 +186,29 @@
             // 
             // InputPathTextBox
             // 
+            this.InputPathTextBox.AllowDrop = true;
             this.InputPathTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.InputPathTextBox.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.InputPathTextBox.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.InputPathTextBox.Location = new System.Drawing.Point(115, 19);
             this.InputPathTextBox.Name = "InputPathTextBox";
-            this.InputPathTextBox.Size = new System.Drawing.Size(652, 23);
+            this.InputPathTextBox.Size = new System.Drawing.Size(652, 26);
             this.InputPathTextBox.TabIndex = 7;
+            this.InputPathTextBox.WordWrap = false;
             // 
             // OutPutPathText
             // 
+            this.OutPutPathText.AllowDrop = true;
             this.OutPutPathText.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.OutPutPathText.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.OutPutPathText.Location = new System.Drawing.Point(115, 74);
+            this.OutPutPathText.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.OutPutPathText.Location = new System.Drawing.Point(115, 77);
             this.OutPutPathText.Name = "OutPutPathText";
-            this.OutPutPathText.Size = new System.Drawing.Size(652, 23);
+            this.OutPutPathText.Size = new System.Drawing.Size(652, 26);
             this.OutPutPathText.TabIndex = 8;
+            this.OutPutPathText.WordWrap = false;
             this.OutPutPathText.TextChanged += new System.EventHandler(this.OutPutPathText_TextChanged);
             // 
             // tableLayoutPanel2
@@ -219,7 +223,7 @@
             this.tableLayoutPanel2.Controls.Add(this.listCousesButton, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.exitButton, 0, 2);
             this.tableLayoutPanel2.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(773, 103);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(773, 109);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 3;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 30F));
@@ -283,7 +287,7 @@
             this.tableLayoutPanel3.Controls.Add(this.srcOpenButton, 0, 2);
             this.tableLayoutPanel3.Controls.Add(this.selectNoticeLabel, 0, 1);
             this.tableLayoutPanel3.Controls.Add(this.dstOpenButton, 0, 3);
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 103);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 109);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 4;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
@@ -355,7 +359,7 @@
             this.LabelBak01.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.LabelBak01.AutoSize = true;
             this.LabelBak01.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelBak01.Location = new System.Drawing.Point(3, 600);
+            this.LabelBak01.Location = new System.Drawing.Point(3, 606);
             this.LabelBak01.Name = "LabelBak01";
             this.LabelBak01.Size = new System.Drawing.Size(106, 16);
             this.LabelBak01.TabIndex = 3;
@@ -366,7 +370,7 @@
             this.LabelBak3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.LabelBak3.AutoSize = true;
             this.LabelBak3.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelBak3.Location = new System.Drawing.Point(773, 600);
+            this.LabelBak3.Location = new System.Drawing.Point(773, 606);
             this.LabelBak3.Name = "LabelBak3";
             this.LabelBak3.Size = new System.Drawing.Size(107, 16);
             this.LabelBak3.TabIndex = 3;
@@ -378,11 +382,11 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.sameLocationCheck.AutoSize = true;
-            this.sameLocationCheck.Location = new System.Drawing.Point(773, 48);
+            this.sameLocationCheck.Location = new System.Drawing.Point(773, 51);
             this.sameLocationCheck.Name = "sameLocationCheck";
             this.sameLocationCheck.Size = new System.Drawing.Size(107, 20);
             this.sameLocationCheck.TabIndex = 14;
-            this.sameLocationCheck.Text = "No";
+            this.sameLocationCheck.Text = "NO";
             this.sameLocationCheck.UseVisualStyleBackColor = true;
             this.sameLocationCheck.CheckStateChanged += new System.EventHandler(this.sameLocationCheck_CheckStateChanged);
             // 
@@ -395,7 +399,7 @@
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel4.Controls.Add(this.coursesListBox, 0, 0);
             this.tableLayoutPanel4.Controls.Add(this.searchBox, 0, 1);
-            this.tableLayoutPanel4.Location = new System.Drawing.Point(115, 103);
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(115, 109);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 2;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 95F));
@@ -429,6 +433,7 @@
             this.searchBox.Size = new System.Drawing.Size(652, 23);
             this.searchBox.TabIndex = 10;
             this.searchBox.Text = "Typing to search";
+            this.searchBox.WordWrap = false;
             this.searchBox.MouseDown += new System.Windows.Forms.MouseEventHandler(this.searchBox_MouseDown);
             // 
             // LabelBak2
@@ -436,7 +441,7 @@
             this.LabelBak2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.LabelBak2.AutoSize = true;
             this.LabelBak2.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelBak2.Location = new System.Drawing.Point(115, 600);
+            this.LabelBak2.Location = new System.Drawing.Point(115, 606);
             this.LabelBak2.Name = "LabelBak2";
             this.LabelBak2.Size = new System.Drawing.Size(652, 16);
             this.LabelBak2.TabIndex = 3;
