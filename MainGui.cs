@@ -77,8 +77,6 @@ namespace PsVDecrypt
                 if (!Directory.Exists(InputPathFolder))
                 {
                     MessageBox.Show("Pluralsight courses directory not found!");
-                    // Environment.Exit(-1);
-                    //MessageBox.Show("")
                     InputPathTextBox.Text = "";
                 }
             }
