@@ -49,6 +49,12 @@ namespace PsVDecrypt
                     OutPutPathButton.Enabled = false;
                     OutPutPathText.Enabled = false;
                 }
+            } else
+            {
+                sameLocationCheck.Text = "NO";
+                OutPutPathButton.Enabled = true;
+                OutPutPathText.Enabled = true;
+                sameLocationCheck.Checked = false;
             }
         }
 
