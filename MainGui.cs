@@ -31,8 +31,14 @@ namespace PsVDecrypt
         {
             if (sameLocationCheck.Checked)
             {
-
-                if (InputPathTextBox.Text.Length > 0)
+                if (!Directory.Exists(InputPathFolder))
+                {
+                    sameLocationCheck.Text = "NO";
+                    MessageBox.Show("Hey. Please provide an existing folder.");
+                    OutPutPathButton.Enabled = true;
+                    OutPutPathText.Enabled = true;
+                    sameLocationCheck.Checked = false;
+                } else
                 {
                     if (SelectedPathFolder is null)
                         SelectedPathFolder = InputPathTextBox.Text;
@@ -43,16 +49,6 @@ namespace PsVDecrypt
                     OutPutPathButton.Enabled = false;
                     OutPutPathText.Enabled = false;
                 }
-                else
-                {
-                    MessageBox.Show("Please specify the courses folder first.");
-                    sameLocationCheck.Checked = false;
-                }
-            } else
-            {
-                sameLocationCheck.Text = "No";
-                OutPutPathButton.Enabled = true;
-                OutPutPathText.Enabled = true;
             }
         }
 
