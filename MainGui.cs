@@ -39,7 +39,7 @@ namespace PsVDecrypt
 
                     OutPutPathFolder = Path.Combine(SelectedPathFolder, "Pluralsight", "converted");
                     OutPutPathText.Text = OutPutPathFolder;
-                    sameLocationCheck.Text = "Yes";
+                    sameLocationCheck.Text = "YES";
                     OutPutPathButton.Enabled = false;
                     OutPutPathText.Enabled = false;
                 }
