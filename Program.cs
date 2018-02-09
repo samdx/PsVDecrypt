@@ -54,7 +54,7 @@ namespace PsVDecrypt
 
             // Read Course Info
             var command =
-                new SQLiteCommand("select * from Course where Name=@Name", _dbConn) {CommandType = CommandType.Text};
+                new SQLiteCommand("select * from Course where Name=@Name", _dbConn) { CommandType = CommandType.Text };
             command.Parameters.Add(new SQLiteParameter("@Name", courseName));
             var reader = command.ExecuteReader();
             var dataTable = new DataTable();
@@ -65,7 +65,7 @@ namespace PsVDecrypt
                 return;
             }
 
-            hasTranscript = (long) dataTable.Rows[0]["HasTranscript"] == 1;
+            hasTranscript = (long)dataTable.Rows[0]["HasTranscript"] == 1;
 
             // Save Course Info to JSON
             File.WriteAllText(Path.Combine(courseDstDir, "course-info.json"),
@@ -159,8 +159,8 @@ namespace PsVDecrypt
                         sequenceI++;
                         sb.Append(sequenceI + "\n");
 
-                        var startMs = (long) transcriptItem["StartTime"];
-                        var endMs = (long) transcriptItem["EndTime"];
+                        var startMs = (long)transcriptItem["StartTime"];
+                        var endMs = (long)transcriptItem["EndTime"];
                         var startTime = TimeSpan.FromMilliseconds(startMs);
                         var endTime = TimeSpan.FromMilliseconds(endMs);
                         sb.Append(startTime.ToString(@"hh\:mm\:ss") + "," + (startMs % 1000));
