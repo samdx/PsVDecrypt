@@ -86,6 +86,7 @@ namespace PsVDecrypt
 
             List<int> coursesToBeConverted = new List<int>();
 
+            // TODO: what if some of following exception occures? A retry function should be invoked.
             try
             {
                 int index = 0;
