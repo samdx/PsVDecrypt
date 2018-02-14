@@ -165,10 +165,20 @@ namespace PsVDecrypt
             }
             Util.CreateDirectory(courseDstDir);
 
-
-            // Copy Image
-            File.Copy(Path.Combine(courseSrcDir, "image.jpg"), Path.Combine(courseDstDir, "image.jpg"));
-            Console.WriteLine(" > Done copying course image.");
+            try
+            {
+                // Copy Image
+                File.Copy(Path.Combine(courseSrcDir, "image.jpg"), Path.Combine(courseDstDir, "image.jpg"));
+                Console.WriteLine(" > Done copying course image.");
+            }
+            catch (FileNotFoundException)
+            {
+                Console.WriteLine("Oop. The image file must not be found. Never mind.");
+            }
+            catch (Exception)
+            {
+                Console.WriteLine("Oh. Something has gone wrong. FIY :3");
+            }
 
             // Read Course Info
             var command =
