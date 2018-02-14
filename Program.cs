@@ -97,13 +97,17 @@ namespace PsVDecrypt
                 } while (index < subdirs.Length);
                 Console.WriteLine("\n");
             }
+            catch (FormatException)
+            {
+                //Console.WriteLine("Oop. The different between [0-9] and [a-z] is? Yes. I need some digit only!");
+            }
             catch (IndexOutOfRangeException)
             {
                 Console.WriteLine("I repeat. The range is from 1 to {0}. And line by line!", subdirs.Length);
             }
             catch (Exception)
             {
-                Console.WriteLine("Poor you. Something has gone wrong. FIY. What if throw out this metal box?");
+                Console.WriteLine("Please check. Digit only. Something has gone wrong. FIY. What if throw out this metal box?");
             }
 
             if (coursesToBeConverted.Count == 0)
