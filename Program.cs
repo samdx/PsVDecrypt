@@ -73,7 +73,7 @@ namespace PsVDecrypt
 
             foreach (var subdir in subdirs)
             {
-                Console.WriteLine(" > " + (Array.IndexOf(subdirs, subdir) + 1) + ": " + Path.GetFileName(subdir));
+                Console.WriteLine(" - " + (Array.IndexOf(subdirs, subdir) + 1) + ":\t" + Path.GetFileName(subdir));
             }
 
             if (!Directory.Exists(OutputDir))
@@ -96,10 +96,17 @@ namespace PsVDecrypt
                 } while (index < subdirs.Length);
                 Console.WriteLine("\n");
             }
-            catch (System.FormatException)
+            catch (FormatException)
             {
-                // Console.WriteLine("Please enter a valid int value. One per line.");
-                // Console.WriteLine("\n");
+                Console.WriteLine("Oop. The different between [0-9] and [a-z] is? Yes. I need some digit only!")
+            }
+            catch (IndexOutOfRangeException)
+            {
+                Console.WriteLine("I repeat. The range is from 1 to {0}. And line by line!", subdirs.Length);
+            }
+            catch (Exception)
+            {
+                Console.WriteLine("Poor you. Something has gone wrong. FIY. What if throw out this metal box?");
             }
 
             if (coursesToBeConverted.Count == 0)
