@@ -152,7 +152,7 @@ namespace PsVDecrypt
             {
                 var course = subdirs[item - 1];
                 var courseName = Path.GetFileName(course);
-                Console.WriteLine("Decrypting...\n\t" + item + ": " + courseName);
+                Console.WriteLine("DESCRYPTING...\n\t" + item + ": " + courseName);
                 DecryptCourse(course, OutputDir);
             }
 
