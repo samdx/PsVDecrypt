@@ -97,10 +97,6 @@ namespace PsVDecrypt
                 } while (index < subdirs.Length);
                 Console.WriteLine("\n");
             }
-            catch (FormatException)
-            {
-                Console.WriteLine("Oop. The different between [0-9] and [a-z] is? Yes. I need some digit only!");
-            }
             catch (IndexOutOfRangeException)
             {
                 Console.WriteLine("I repeat. The range is from 1 to {0}. And line by line!", subdirs.Length);
