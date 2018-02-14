@@ -98,7 +98,7 @@ namespace PsVDecrypt
             }
             catch (FormatException)
             {
-                Console.WriteLine("Oop. The different between [0-9] and [a-z] is? Yes. I need some digit only!")
+                Console.WriteLine("Oop. The different between [0-9] and [a-z] is? Yes. I need some digit only!");
             }
             catch (IndexOutOfRangeException)
             {
