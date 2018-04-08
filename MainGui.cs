@@ -60,10 +60,12 @@ namespace PsVDecrypt
 
         private void InputPathButton_Click(object sender, EventArgs e)
         {
-            FolderBrowserDialog folderBrowserDialog1 = new FolderBrowserDialog();
-            folderBrowserDialog1.ShowNewFolderButton = true;
-            folderBrowserDialog1.Description =
-            "Select the directory that you specify to load courses.";
+            FolderBrowserDialog folderBrowserDialog1 = new FolderBrowserDialog
+            {
+                ShowNewFolderButton = true,
+                Description =
+            "Select the directory that you specify to load courses."
+            };
 
             DialogResult result = folderBrowserDialog1.ShowDialog();
             if (result == DialogResult.OK)
@@ -85,10 +87,12 @@ namespace PsVDecrypt
 
         private void OutPutPathButton_Click(object sender, EventArgs e)
         {
-            FolderBrowserDialog folderBrowserDialog1 = new FolderBrowserDialog();
-            folderBrowserDialog1.ShowNewFolderButton = true;
-            folderBrowserDialog1.Description =
-            "Select the directory that you specify to save converted courses.";
+            FolderBrowserDialog folderBrowserDialog1 = new FolderBrowserDialog
+            {
+                ShowNewFolderButton = true,
+                Description =
+            "Select the directory that you specify to save converted courses."
+            };
 
             DialogResult result = folderBrowserDialog1.ShowDialog();
             if (result == DialogResult.OK)
@@ -99,7 +103,7 @@ namespace PsVDecrypt
             }
         }
 
-        private void exitButton_Click(object sender, EventArgs e)
+        private void ExitButton_Click(object sender, EventArgs e)
         {
             this.Close();
         }
@@ -122,7 +126,7 @@ namespace PsVDecrypt
             
         }
 
-        private void listCousesButton_Click(object sender, EventArgs e)
+        private void ListCousesButton_Click(object sender, EventArgs e)
         {
             _coursesList.Clear();
 
@@ -168,7 +172,7 @@ namespace PsVDecrypt
             //var convertlist = coursesListBox.SelectedItems;
         }
 
-        private void searchBox_MouseDown(object sender, MouseEventArgs e)
+        private void SearchBox_MouseDown(object sender, MouseEventArgs e)
         {
             if (searchBox.Enabled)
             {
@@ -176,7 +180,7 @@ namespace PsVDecrypt
             }
         }
 
-        private void convertButton_Click(object sender, EventArgs e)
+        private void ConvertButton_Click(object sender, EventArgs e)
         {
             _coursesToConverted = coursesListBox.SelectedItems;
             
@@ -229,7 +233,7 @@ namespace PsVDecrypt
 
         }
 
-        private void srcOpenButton_Click(object sender, EventArgs e)
+        private void SrcOpenButton_Click(object sender, EventArgs e)
         {
 
             if (coursesListBox.SelectedItems.Count == 1)
@@ -249,7 +253,7 @@ namespace PsVDecrypt
             }
         }
 
-        private void dstOpenButton_Click(object sender, EventArgs e)
+        private void DstOpenButton_Click(object sender, EventArgs e)
         {
             if (coursesListBox.SelectedItems.Count == 1)
             {

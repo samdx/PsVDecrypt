@@ -245,7 +245,7 @@
             this.convertButton.TabIndex = 7;
             this.convertButton.Text = "Convert";
             this.convertButton.UseVisualStyleBackColor = true;
-            this.convertButton.Click += new System.EventHandler(this.convertButton_Click);
+            this.convertButton.Click += new System.EventHandler(this.ConvertButton_Click);
             // 
             // listCousesButton
             // 
@@ -260,7 +260,7 @@
             this.listCousesButton.TabIndex = 7;
             this.listCousesButton.Text = "List courses";
             this.listCousesButton.UseVisualStyleBackColor = true;
-            this.listCousesButton.Click += new System.EventHandler(this.listCousesButton_Click);
+            this.listCousesButton.Click += new System.EventHandler(this.ListCousesButton_Click);
             // 
             // exitButton
             // 
@@ -274,7 +274,7 @@
             this.exitButton.TabIndex = 6;
             this.exitButton.Text = "EXIT";
             this.exitButton.UseVisualStyleBackColor = true;
-            this.exitButton.Click += new System.EventHandler(this.exitButton_Click);
+            this.exitButton.Click += new System.EventHandler(this.ExitButton_Click);
             // 
             // tableLayoutPanel3
             // 
@@ -324,7 +324,7 @@
             this.srcOpenButton.TabIndex = 7;
             this.srcOpenButton.Text = "Source folder";
             this.srcOpenButton.UseVisualStyleBackColor = true;
-            this.srcOpenButton.Click += new System.EventHandler(this.srcOpenButton_Click);
+            this.srcOpenButton.Click += new System.EventHandler(this.SrcOpenButton_Click);
             // 
             // selectNoticeLabel
             // 
@@ -353,7 +353,7 @@
             this.dstOpenButton.TabIndex = 7;
             this.dstOpenButton.Text = "Converted folder";
             this.dstOpenButton.UseVisualStyleBackColor = true;
-            this.dstOpenButton.Click += new System.EventHandler(this.dstOpenButton_Click);
+            this.dstOpenButton.Click += new System.EventHandler(this.DstOpenButton_Click);
             // 
             // LabelBak01
             // 
@@ -435,7 +435,7 @@
             this.searchBox.TabIndex = 10;
             this.searchBox.Text = "Typing to search";
             this.searchBox.WordWrap = false;
-            this.searchBox.MouseDown += new System.Windows.Forms.MouseEventHandler(this.searchBox_MouseDown);
+            this.searchBox.MouseDown += new System.Windows.Forms.MouseEventHandler(this.SearchBox_MouseDown);
             // 
             // LabelBak2
             // 
