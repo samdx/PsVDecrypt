@@ -389,7 +389,7 @@
             this.sameLocationCheck.TabIndex = 14;
             this.sameLocationCheck.Text = "NO";
             this.sameLocationCheck.UseVisualStyleBackColor = true;
-            this.sameLocationCheck.CheckStateChanged += new System.EventHandler(this.sameLocationCheck_CheckStateChanged);
+            this.sameLocationCheck.CheckStateChanged += new System.EventHandler(this.SameLocationCheck_CheckStateChanged);
             // 
             // tableLayoutPanel4
             // 

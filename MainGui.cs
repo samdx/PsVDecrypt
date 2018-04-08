@@ -27,7 +27,7 @@ namespace PsVDecrypt
             "Pluralsight", "pluralsight.db");
  
 
-        private void sameLocationCheck_CheckStateChanged(object sender, EventArgs e)
+        private void SameLocationCheck_CheckStateChanged(object sender, EventArgs e)
         {
             if (sameLocationCheck.Checked)
             {
